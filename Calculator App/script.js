@@ -1,99 +1,96 @@
-const seven = document.getElementById("num-seven");
-const eight = document.getElementById("num-eight");
-const nine = document.getElementById("num-nine");
+class Calculator {
+  constructor(previousOperandTextElement, currentOperandTextElement) {
+    this.previousOperandTextElement = previousOperandTextElement;
+    this.currentOperandTextElement = currentOperandTextElement;
+    this.clear();
+  }
+  clear() {
+    this.currentOperand = "";
+    this.previousOperand = "";
+    this.operation = undefined;
+  }
+  delete() {}
+  appendNumber(number) {
+    if (number === "." && this.currentOperand.includes(".")) return;
+    this.currentOperand = this.currentOperand.toString() + number.toString();
+  }
+  chooseOperation(operation) {
+    if (this.currentOperand === "") return;
+    if (this.previousOperand !== "") {
+      this.compute();
+    }
+    this.operation = operation;
+    this.previousOperand = this.currentOperand;
+    this.currentOperand = "";
+  }
+  compute() {
+    let computation;
+    const prev = parseFloat(this.previousOperand);
+    const current = parseFloat(this.currentOperand);
 
-const four = document.getElementById("num-four");
-const five = document.getElementById("num-five");
-const six = document.getElementById("num-six");
+    if (!isNaN(prev) || isNaN(current)) return;
 
-const one = document.getElementById("num-one");
-const two = document.getElementById("num-two");
-const three = document.getElementById("num-three");
-const zero = document.getElementById("num-zero");
+    switch (this.operation) {
+      case "+":
+        computation = prev + current;
+        break;
+      case "-":
+        computation = prev - current;
+        break;
+      case "*":
+        computation = prev * current;
+        break;
+      case "÷":
+        computation = prev / current;
+        break;
+      default:
+        return;
+    }
+    this.currentOperand = computation;
+    this.operation = undefined;
+    this.previousOperand = "";
+  }
+  updateDisplay() {
+    this.currentOperandTextElement.innerText = this.currentOperand;
+    this.previousOperandTextElement.innerText = this.previousOperand;
+  }
+}
 
-const del = document.getElementById("num-del");
-const clear = document.getElementById("num-clear");
+const numberButtons = document.querySelectorAll("[data-number]");
+const operationButtons = document.querySelectorAll("[data-operation]");
+const equalsButtons = document.querySelector("[data-equals]");
+const deleteButtons = document.querySelector("[data-delete]");
+const allClearButton = document.querySelector("[data-all-clear]");
+const previousOperandTextElement = document.querySelector(
+  "[data-previous-operand]"
+);
+const currentOperandTextElement = document.querySelector(
+  "[data-current-operand]"
+);
 
-const times = document.getElementById("num-times");
-const divide = document.getElementById("num-divide");
+const calculator = new Calculator(
+  previousOperandTextElement,
+  currentOperandTextElement
+);
 
-const plus = document.getElementById("num-plus");
-const minus = document.getElementById("num-minus");
-
-const dot = document.getElementById("num-dot");
-const memory = document.getElementById("num-memory");
-const calc = document.getElementById("num-calculate");
-
-const body = document.body;
-
-const power = document.querySelector(".btn-start");
-let display = document.querySelector(".display-area");
-
-let num1 = "";
-let num2 = "";
-
-seven.addEventListener("click", () => {
-  console.log("object");
-  display.value = "7";
+numberButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    calculator.appendNumber(button.innerText);
+    calculator.updateDisplay();
+  });
 });
 
-eight.addEventListener("click", () => {
-  console.log("object");
-  display.value = "8";
+operationButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    calculator.chooseOperation(button.innerText);
+    calculator.updateDisplay();
+  });
 });
 
-nine.addEventListener("click", () => {
-  console.log("object");
-  display.value = "9";
+equalsButtons.addEventListener("click", (button) => {
+  calculator.compute();
+  calculator.updateDisplay();
 });
 
-four.addEventListener("click", () => {
-  console.log("object");
-  display.value = "4";
-});
-
-five.addEventListener("click", () => {
-  console.log("object");
-  display.value = "5";
-});
-
-six.addEventListener("click", () => {
-  console.log("object");
-  display.value = "6";
-});
-
-one.addEventListener("click", () => {
-  console.log("object");
-  display.value = "1";
-});
-
-two.addEventListener("click", () => {
-  console.log("object");
-  display.value = "2";
-});
-
-three.addEventListener("click", () => {
-  console.log("object");
-  display.value = "3";
-});
-
-seven.addEventListener("click", () => {
-  console.log("object");
-  display.value = "7";
-});
-
-zero.addEventListener("click", () => {
-  console.log("object");
-  display.value = "0";
-});
-
-dot.addEventListener("click", () => {
-  console.log("object");
-  display.value += ".";
-});
-
-clear.addEventListener("click", () => {
-  display.value = "0";
-});
-
-function getnum_one() {}
+//29:58
+//https://www.youtube.com/watch?v=j59qQ7YWLxw
