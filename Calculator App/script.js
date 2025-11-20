@@ -96,4 +96,4 @@ clear.addEventListener("click", () => {
   display.value = "0";
 });
 
-power = 1;
+function getnum_one() {}
