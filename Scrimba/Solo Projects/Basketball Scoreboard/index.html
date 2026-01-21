@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.cdnfonts.com/css/cursed-timer-ulil" rel="stylesheet">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Creepster&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">           
+</head>
+<body>
+    <div class="main-body">
+
+        <div class="container">
+            <div class="home-section">
+                <h3 id="home-team">HOME</h3>
+                <p id="score1" class="scores">0</p>
+                <div >
+                    <button class="buttons " onclick="plus1()">+1</button>
+                    <button class="buttons" onclick="plus2()">+2</button>
+                    <button class="buttons" onclick="plus3()">+3</button>
+                </div>
+                <button class="btn" id="reset-btn">Reset</button>
+            </div>
+            <div class="guest-section">
+                <h3 id="guest-team">GUEST</h3>
+                <p id="score2" class="scores">0</p>
+                <div >
+                    <button class="buttons" onclick="add1()">+1</button>
+                    <button class="buttons" onclick="add2()">+2</button>
+                    <button class="buttons" onclick="add3()">+3</button>
+                </div>
+                <button class="btn" id="stop-btn">Stop</button>
+
+            </div>
+        </div>
+        <p id="winner"></p>
+    </div>
+    <script src="index.js"></script>
+</html>
+</body>
+</html>
