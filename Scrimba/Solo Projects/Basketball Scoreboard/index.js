@@ -57,7 +57,7 @@ resetBtn.addEventListener("click", () => {
   score2.textContent = 0;
   homeTeam.classList.remove("winning");
   guestTeam.classList.remove("winning");
-  winningTeam.style.visibility = "hidden";
+  winningTeam.style.display = "none";
 });
 
 stopBtn.addEventListener("click", () => {
@@ -65,6 +65,8 @@ stopBtn.addEventListener("click", () => {
   score2.textContent = 0;
   homeTeam.classList.remove("winning");
   guestTeam.classList.remove("winning");
+  winningTeam.style.display = "block";
+
   if (count1 > count2) {
     winningTeam.textContent = "Home is our Winner";
   } else if (count1 < count2) {

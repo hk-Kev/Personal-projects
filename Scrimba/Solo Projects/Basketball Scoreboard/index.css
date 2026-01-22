@@ -66,8 +66,15 @@ h3 {
   background-color: #e11d48;
   font-weight: bolder;
   border-radius: 10px;
+  border: none;
 }
 
-#winner {
-  /* visibility: hidden; */
+#score-board {
+  font-family: "Cursed Timer ULiL", sans-serif;
+  font-size: larger;
+  text-align: center;
+  font-weight: bolder;
+  letter-spacing: 5px;
+  color: limegreen;
+  text-shadow: 2px 1px black;
 }
