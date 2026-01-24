@@ -214,18 +214,19 @@ function passwordGenerator() {
   if (symbolsIncluded.checked) {
     characters.push(...symbols);
   }
+  firstPass.style.color = "#4adf86";
+  for (let i = 0; i < slider.value; i++) {
+    password.push(characters[numberGenerator()]);
+  }
+  firstPass.textContent = password.join("");
   if (
     !symbolsIncluded.checked &&
     !numberIncluded.checked &&
     !lowerIncluded.checked &&
     !upperIncluded.checked
   ) {
-    characters.push(...alphabet);
+    // characters.push(...alphabet);
+    firstPass.textContent = "Please Select something !!!!!";
+    firstPass.style.color = "rgb(244, 10, 10)";
   }
-
-  firstPass.style.color = "#4adf86";
-  for (let i = 0; i < slider.value; i++) {
-    password.push(characters[numberGenerator()]);
-  }
-  firstPass.textContent = password.join("");
 }
