@@ -35,7 +35,7 @@ span {
   margin-right: 20px;
   border-radius: 5px;
   margin-top: 20px;
-  width: 18ch;
+  width: 35ch;
 }
 .password-field {
   display: flex;
@@ -47,4 +47,15 @@ span {
 #intro {
   font-weight: lighter;
   margin-bottom: 50px;
+}
+#slider {
+  width: 300px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.checkboxes {
+  margin-bottom: 20px;
+}
+#changed-text {
+  font-weight: bolder;
 }

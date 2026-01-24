@@ -1,4 +1,4 @@
-const characters = [
+const alphabet = [
   "A",
   "B",
   "C",
@@ -91,25 +91,141 @@ const characters = [
   "?",
   "/",
 ];
+const uppers = [
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
+  "M",
+  "N",
+  "O",
+  "P",
+  "Q",
+  "R",
+  "S",
+  "T",
+  "U",
+  "V",
+  "W",
+  "X",
+  "Y",
+  "Z",
+];
+const lower = [
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z",
+];
+const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+const symbols = [
+  "~",
+  "`",
+  "!",
+  "@",
+  "#",
+  "$",
+  "%",
+  "^",
+  "&",
+  "*",
+  "(",
+  ")",
+  "_",
+  "-",
+  "+",
+  "=",
+  "{",
+  "[",
+  "}",
+  "]",
+  ",",
+  "|",
+  ":",
+  ";",
+  "<",
+  ">",
+  ".",
+  "?",
+  "/",
+];
+let characters = [];
 
+let upperIncluded = document.getElementById("upper");
+let lowerIncluded = document.getElementById("lower");
+let numberIncluded = document.getElementById("numbers");
+let symbolsIncluded = document.getElementById("symbols");
 let firstPass = document.getElementById("first-pass");
-let secondPass = document.getElementById("second-pass");
-let firstPassword = [];
-let secondPassword = [];
+let password = [];
+let lengthValue = document.getElementById("password-length");
+let slider = document.getElementById("slider");
+
+function revealer() {
+  lengthValue.textContent = slider.value;
+}
 
 function numberGenerator() {
-  return Math.floor(Math.random() * characters.length) + 1;
+  return Math.floor(Math.random() * characters.length);
 }
 
 function passwordGenerator() {
-  firstPass.style.color = "#4adf86";
-  secondPass.style.color = "#4adf86";
-  firstPassword = [];
-  secondPassword = [];
-  for (let i = 0; i < 15; i++) {
-    firstPassword.push(characters[numberGenerator()]);
-    secondPassword.push(characters[numberGenerator()]);
+  password = [];
+  characters = [];
+  if (upperIncluded.checked) {
+    characters.push(...uppers);
+    console.log(characters);
   }
-  secondPass.textContent = firstPassword.join("");
-  firstPass.textContent = secondPassword.join("");
+  if (lowerIncluded.checked) {
+    characters.push(...lower);
+  }
+  if (numberIncluded.checked) {
+    characters.push(...numbers);
+  }
+  if (symbolsIncluded.checked) {
+    characters.push(...symbols);
+  }
+  if (
+    !symbolsIncluded.checked &&
+    !numberIncluded.checked &&
+    !lowerIncluded.checked &&
+    !upperIncluded.checked
+  ) {
+    characters.push(...alphabet);
+  }
+
+  firstPass.style.color = "#4adf86";
+  for (let i = 0; i < slider.value; i++) {
+    password.push(characters[numberGenerator()]);
+  }
+  firstPass.textContent = password.join("");
 }

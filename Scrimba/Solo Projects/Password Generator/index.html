@@ -12,12 +12,39 @@
         Generate a <br />
         <span id="changed-text">random password</span>
       </h1>
-      <p id="intro">Never use an insecure password again.</p>
-      <button onclick="passwordGenerator()">Generate passwords</button>
+      <p id="intro">
+        Never use an <span id="changed-text">insecure</span> password again.
+      </p>
+      <div class="settings">
+        <div class="pass-length">
+          <label for="range">Password Length: </label>
+          <span id="password-length">5</span>
+          <br />
+          <input
+            type="range"
+            min="5"
+            max="30"
+            value="5"
+            id="slider"
+            oninput="revealer()"
+          />
+        </div>
+        <h1><span id="changed-text">Check</span> to include them:</h1>
+        <div class="checkboxes">
+          <input type="checkbox" id="upper" />
+          <label for="Uppercase">Uppercase</label>
+          <input type="checkbox" id="lower" />
+          <label for="Lowercase">Lowercase</label>
+          <input type="checkbox" id="numbers" />
+          <label for="Numbers">Numbers</label>
+          <input type="checkbox" id="symbols" />
+          <label for="Symbol">Symbol</label>
+        </div>
+      </div>
+      <button onclick="passwordGenerator()">Generate password</button>
 
       <div class="password-field">
         <label class="password-place" id="first-pass">123456789012345</label>
-        <label class="password-place" id="second-pass">123456789012345</label>
       </div>
     </div>
     <script src="index.js"></script>
