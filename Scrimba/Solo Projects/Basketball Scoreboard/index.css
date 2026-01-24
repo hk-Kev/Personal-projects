@@ -5,7 +5,6 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 .main-body {
   background-color: #0c4a6e;
