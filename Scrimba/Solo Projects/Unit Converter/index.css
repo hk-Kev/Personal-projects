@@ -1,0 +1,66 @@
+body {
+  background-color: bisque;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family:
+    "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.main-converter {
+  border: 5px solid white;
+  text-align: center;
+  width: 600px;
+  border-radius: 15px;
+}
+.input-area {
+  border: 1px solid #6943ff;
+  background-color: #6943ff;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  color: white;
+  padding-bottom: 20px;
+}
+button {
+  border-style: none;
+  padding: 5px 20px;
+  border-radius: 2px;
+  margin-top: 20px;
+}
+input {
+  width: 5ch;
+  height: 60px;
+  background-color: #6943ff;
+  border: 1px solid whitesmoke;
+  border-radius: 2px;
+  text-align: center;
+  font-size: 5ch;
+  color: white;
+  text-decoration: none;
+  font-weight: bolder;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.display-area {
+  background-color: whitesmoke;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 1px dotted #6943ff;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.measurements-area {
+  border: 1px solid white;
+  width: 500px;
+  margin: auto auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background-color: white;
+}
+
+h3 {
+  color: #5a537b;
+}

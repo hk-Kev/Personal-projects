@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="main-converter">
+      <div class="input-area">
+        <h1>Metric/Imperial Unit Conversion</h1>
+        <input type="number" id="input-field" value="x" />
+        <br />
+        <button id="convert-btn">Convert</button>
+      </div>
+      <div class="display-area">
+        <div class="measurements-area" id="length-field">
+          <h3>Length (Meter/Feet)</h3>
+          <p>
+            <span class="initial-value">x</span> meters =
+            <span id="meter-feet">x</span> feet |
+            <span class="initial-value">x</span> feet =
+            <span id="feet-meters">x</span> meters
+          </p>
+        </div>
+        <div class="measurements-area" id="volume-field">
+          <h3>Volume (Liters/Gallons)</h3>
+          <p>
+            <span class="initial-value">x</span> liters =
+            <span id="liters-gallons">x</span> gallons |
+            <span class="initial-value">x</span> gallons =
+            <span id="gallons-liters">x</span> liters
+          </p>
+        </div>
+        <div class="measurements-area" id="mass-field">
+          <h3>Mass (Kilograms/Pounds)</h3>
+          <p>
+            <span class="initial-value">x</span> kilos =
+            <span id="kilos-pounds">x</span> pounds |
+            <span class="initial-value">x</span> pounds =
+            <span id="pounds-kilos">x</span> kilos
+          </p>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
